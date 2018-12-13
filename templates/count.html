@@ -29,23 +29,22 @@
     </div>
   </nav>
   <div class="jumbotron" >
-    <h1>There are {{ count }} words in your text</h1>
-    <a href="{% url 'home'%}">Start Again</a>
-    <hr>
 
+
+  <hr> <h2>There are {{ count }} words in your text</h2><hr>
     <h1>your text:</h1>
 
     {{ fulltext }}
-    <hr>
-    <h3> Word Repetition Count:</h3>
-    <hr>
+    <hr color="#2bcce5">
+    <h4> Word Repetition Count: <a href="{% url 'home'%}">Start Again</a></h4>
+    <hr color="#2bcce5">
   {% for word,counttotal in  sortedwords %}
 
   <table class="table table-sm col-md-2">
   <thead class="thead active">
     <tr>
-      <th style="text-align:left">{{ word }}</th>
-      <th style="text-align:right">{{ counttotal }}</th>
+      <th style="text-align:left"><h4 class="font-weight-bold">{{ word }}</h4></th>
+      <th style="text-align:right"><h4 class="font-weight-bold">{{ counttotal }}</h4></th>
     </tr>
   </thead>
     </table>
