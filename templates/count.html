@@ -1,16 +1,53 @@
-<h1>There are {{ count }} words in your text</h1>
 
-<a href="{% url 'home'%}">Start Again</a>
 
-<h1>your text:</h1>
 
-{{ fulltext }}
 
-<h1>Word Count</h1>
 
-{% for word,counttotal in  sortedwords %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
 
-     {{ word }} - {{ counttotal }}
-      <br>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Word Count</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'about'%}">About <span class="sr-only">(current)</span></a>
+        </li>
 
-{%endfor%}
+      </ul>
+
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <h1>There are {{ count }} words in your text</h1>
+    <a href="{% url 'home'%}">Start Again</a>
+    <hr>
+
+    <h1>your text:</h1>
+
+    {{ fulltext }}
+    <hr>
+    <h1>Word Count</h1>
+
+    {% for word,counttotal in  sortedwords %}
+
+         {{ word }} - {{ counttotal }}
+          <br>
+
+    {%endfor%}
+
+  </body>
+
+
+  </body>
+</html>
