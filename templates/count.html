@@ -28,7 +28,7 @@
 
     </div>
   </nav>
-  <div class="jumbotron">
+  <div class="jumbotron" >
     <h1>There are {{ count }} words in your text</h1>
     <a href="{% url 'home'%}">Start Again</a>
     <hr>
@@ -37,11 +37,19 @@
 
     {{ fulltext }}
     <hr>
-    <h1>Word Count</h1>
+    <h3> Word Repetition Count:</h3>
+    <hr>
+  {% for word,counttotal in  sortedwords %}
 
-    {% for word,counttotal in  sortedwords %}
+  <table class="table table-sm col-md-2">
+  <thead class="thead active">
+    <tr>
+      <th style="text-align:left">{{ word }}</th>
+      <th style="text-align:right">{{ counttotal }}</th>
+    </tr>
+  </thead>
+    </table>
 
-         {{ word }} - {{ counttotal }}
           <br>
 
     {%endfor%}
